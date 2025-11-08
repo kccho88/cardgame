@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 뒤집기 게임</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <header>
+            <h1>🎴 카드 뒤집기 게임</h1>
+            <p>같은 카드를 찾아보세요!</p>
+        </header>
+
+        <!-- 게임 설정 -->
+        <div class="game-setup" id="gameSetup">
+            <h2>난이도 선택</h2>
+            <div class="difficulty-buttons">
+                <button class="difficulty-btn" data-difficulty="easy" data-cards="12">
+                    쉬움 (4x3)
+                </button>
+                <button class="difficulty-btn active" data-difficulty="medium" data-cards="16">
+                    보통 (4x4)
+                </button>
+                <button class="difficulty-btn" data-difficulty="hard" data-cards="20">
+                    어려움 (5x4)
+                </button>
+            </div>
+            <button class="start-btn" id="startBtn">게임 시작</button>
+        </div>
+
+        <!-- 게임 정보 -->
+        <div class="game-info" id="gameInfo" style="display: none;">
+            <div class="info-item">
+                <span class="label">시간:</span>
+                <span class="value" id="timer">00:00</span>
+            </div>
+            <div class="info-item">
+                <span class="label">시도:</span>
+                <span class="value" id="moves">0</span>
+            </div>
+            <div class="info-item">
+                <span class="label">매칭:</span>
+                <span class="value" id="matched">0 / 0</span>
+            </div>
+            <button class="reset-btn" id="resetBtn">다시 시작</button>
+        </div>
+
+        <!-- 게임 보드 -->
+        <div class="game-board" id="gameBoard" style="display: none;">
+            <!-- 카드들이 동적으로 생성됩니다 -->
+        </div>
+
+        <!-- 리더보드 -->
+        <div class="leaderboard" id="leaderboard">
+            <h2>🏆 리더보드</h2>
+            <div class="leaderboard-filter">
+                <button class="filter-btn active" data-filter="all">전체</button>
+                <button class="filter-btn" data-filter="easy">쉬움</button>
+                <button class="filter-btn" data-filter="medium">보통</button>
+                <button class="filter-btn" data-filter="hard">어려움</button>
+            </div>
+            <div class="leaderboard-list" id="leaderboardList">
+                <p class="loading">리더보드를 불러오는 중...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 게임 완료 모달 -->
+    <div class="modal" id="winModal">
+        <div class="modal-content">
+            <h2>🎉 축하합니다!</h2>
+            <p class="modal-stats">
+                <strong>시간:</strong> <span id="finalTime">00:00</span><br>
+                <strong>시도 횟수:</strong> <span id="finalMoves">0</span>
+            </p>
+            <div class="modal-form">
+                <label for="playerName">닉네임을 입력하세요:</label>
+                <input type="text" id="playerName" maxlength="20" placeholder="닉네임" />
+                <div class="modal-buttons">
+                    <button class="submit-btn" id="submitScore">점수 저장</button>
+                    <button class="close-btn" id="closeModal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Supabase JS 라이브러리 (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- 게임 스크립트 -->
+    <script src="js/config.js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
+

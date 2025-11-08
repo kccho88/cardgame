@@ -1,0 +1,21 @@
+# 운영체제
+.DS_Store
+Thumbs.db
+
+# 에디터
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 로그
+*.log
+
+# 환경 변수 (선택적)
+# js/config.js
+
+# 임시 파일
+*.tmp
+*.bak
+
