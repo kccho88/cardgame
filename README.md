@@ -25,15 +25,25 @@ git clone <repository-url>
 cd card-game
 ```
 
-### 2. Supabase 설정
+### 2. Supabase 설정 파일 생성
 
-#### 2.1 Supabase 프로젝트 생성
+#### 2.1 config.js 파일 생성
+
+```bash
+# Windows (PowerShell)
+Copy-Item js/config.example.js js/config.js
+
+# macOS/Linux
+cp js/config.example.js js/config.js
+```
+
+#### 2.2 Supabase 프로젝트 생성
 
 1. [Supabase](https://supabase.com)에 가입 및 로그인
 2. 새 프로젝트 생성
 3. 프로젝트 URL과 anon key 복사
 
-#### 2.2 데이터베이스 테이블 생성
+#### 2.3 데이터베이스 테이블 생성
 
 Supabase SQL Editor에서 다음 SQL을 실행하세요:
 
@@ -66,7 +76,7 @@ ON game_scores FOR INSERT
 WITH CHECK (true);
 ```
 
-#### 2.3 설정 파일 수정
+#### 2.4 설정 파일 수정
 
 `js/config.js` 파일을 열고 Supabase 정보를 입력하세요:
 
@@ -76,6 +86,8 @@ const SUPABASE_CONFIG = {
     anonKey: 'your-anon-key'  // 여러분의 Supabase anon key
 };
 ```
+
+⚠️ **중요**: `js/config.js` 파일은 `.gitignore`에 포함되어 있어 Git에 커밋되지 않습니다.
 
 ### 3. 실행
 

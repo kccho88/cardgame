@@ -1,7 +1,8 @@
-// Supabase 설정
+// Supabase 설정 (예시 파일)
+// 이 파일을 복사하여 config.js로 저장하고 실제 값을 입력하세요
 const SUPABASE_CONFIG = {
-    url: 'https://tzgiuinohdvnhcxvefev.supabase.co',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR6Z2l1aW5vaGR2bmhjeHZlZmV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1MTc3OTMsImV4cCI6MjA3ODA5Mzc5M30.A6Y9gNCS2-D3xNIuLlYIS2Mlt1H-hVoUfglMFoq-jNE'
+    url: 'YOUR_SUPABASE_URL', // 예: 'https://xyzcompany.supabase.co'
+    anonKey: 'YOUR_SUPABASE_ANON_KEY' // Supabase 프로젝트의 anon/public key
 };
 
 // 게임 설정
